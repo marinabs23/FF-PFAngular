@@ -1,0 +1,16 @@
+<div class="card">
+  <img class="card-img-top" src="{{ prod.imagen }}" alt="Foto camiseta" />
+  <div class="card-body justify-content-center">
+    <h5 class="card-title">{{ prod.nombre }}</h5>
+    <p class="card-text precio float-start">{{ prod.precio }}€</p>
+    <p class="card-text stock float-end">Stock: {{ prod.stock }}</p>
+    <br />
+    <button
+      type="button"
+      class="mt-2 btn mx-auto btn-dark d-block"
+      disabled="false"
+    >
+      Añadir
+    </button>
+  </div>
+</div>

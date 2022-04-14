@@ -1,0 +1,13 @@
+#preciototal {
+  color: rgb(109, 109, 109);
+}
+
+.cesta {
+  position: fixed;
+  right: 0;
+  height: 100vh;
+  top: 0;
+}
+.cesta img {
+  width: 80px;
+}

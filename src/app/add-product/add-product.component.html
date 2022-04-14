@@ -1,0 +1,53 @@
+<div class="inner pt-10">
+  <form>
+    <h3 class="text-center mb-3">Nuevo Producto</h3>
+
+    <div class="form-group">
+      <label class="pt-2">Nombre del Producto</label>
+      <input
+        type="text"
+        class="form-control"
+        name="nombre"
+        placeholder="Introduzca el nombre del producto"
+        value="{this.state.nombre}"
+      />
+      <label class="pt-2">Imagen del Producto</label>
+      <Input
+        type="file"
+        class="form-control"
+        name="imagen"
+        value="{this.state.imagen}"
+      />
+      <label class="pt-2">Precio</label>
+      <Input
+        type="number"
+        class="form-control"
+        name="precio"
+        placeholder="Precio"
+        value="{this.state.precio}"
+      />
+      <label class="pt-2">Stock</label>
+      <Input
+        type="number"
+        class="form-control"
+        name="stock"
+        placeholder="Stock"
+        value="{this.state.stock}"
+      />
+      <label class="pt-2">Categoria</label>
+      <select
+        class="form-select"
+        id="categorias-producto"
+        name="categoria"
+        value="{this.state.categoria}"
+        onChange="{this.handleChange}"
+      ></select>
+    </div>
+
+    <br />
+
+    <button type="submit" class="btn btn-dark w-100" id="btn-login">
+      Añadir
+    </button>
+  </form>
+</div>

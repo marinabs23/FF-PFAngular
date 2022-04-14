@@ -1,0 +1,4 @@
+<div *ngFor="let cat of categorias">
+  <!--si esa categoria esta activa la mostramos-->
+  <app-categoria [cat]="cat" [productos]="getProductosCat(cat)"></app-categoria>
+</div>

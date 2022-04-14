@@ -1,0 +1,12 @@
+.inner {
+  width: 500px;
+  margin: auto;
+  background: transparent;
+  padding: 0px 55px 45px 55px;
+  border-radius: 6px;
+  transition: all 0.3s;
+  padding-top: 10%;
+}
+#btn-login {
+  background-color: #f5a700;
+}

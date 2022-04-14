@@ -1,0 +1,41 @@
+<div class="inner pt-10">
+  <form>
+    <h3 class="text-center mb-3">Inicio de Sesión</h3>
+
+    <div class="form-group">
+      <label>Nombre de usuario</label>
+
+      <input
+        type="text"
+        [(ngModel)]="username"
+        name="username"
+        class="form-control"
+        placeholder="Introduzca su nombre de usuario"
+        required="required"
+      />
+    </div>
+
+    <div class="form-group">
+      <label>Contraseña</label>
+      <input
+        type="password"
+        class="form-control"
+        name="password"
+        placeholder="Introduzca su contraseña"
+        [(ngModel)]="password"
+        validations="required"
+      />
+    </div>
+
+    <br />
+
+    <button
+      type="submit"
+      (click)="login()"
+      class="btn btn-dark w-100"
+      id="btn-login"
+    >
+      Iniciar Sesión
+    </button>
+  </form>
+</div>

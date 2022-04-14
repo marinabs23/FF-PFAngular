@@ -1,0 +1,17 @@
+<h3
+  [ngClass]="visible ? '' : 'active'"
+  class="toggle-btn"
+  style="width: 190px"
+  (click)="toggleDisplay()"
+>
+  {{ cat.nombre }}
+  <span class="pt-2 arrow"></span>
+</h3>
+
+<div *ngIf="visible" class="row">
+  <app-tarjeta
+    *ngFor="let prod of productos"
+    [prod]="prod"
+    class="col-lg-4 col-sm-12"
+  ></app-tarjeta>
+</div>

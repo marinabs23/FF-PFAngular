@@ -1,0 +1,43 @@
+.toggle-btn {
+  position: relative;
+  display: block;
+
+  padding: 10px;
+  text-decoration: none;
+  margin-bottom: 5px;
+}
+
+.arrow {
+  position: absolute;
+  top: 20px;
+  right: 2px;
+}
+
+.arrow::before,
+.arrow::after {
+  position: relative;
+  content: "";
+  display: block;
+  width: 10px;
+  height: 2px;
+  background: black;
+  transition: 0.3s ease-in-out;
+}
+
+.arrow::before {
+  transform: rotate(45deg);
+}
+
+.arrow::after {
+  left: 6px;
+  top: -1px;
+  transform: rotate(-45deg);
+}
+
+.toggle-btn.active .arrow::before {
+  transform: rotate(-45deg);
+}
+
+.toggle-btn.active .arrow::after {
+  transform: rotate(45deg);
+}
