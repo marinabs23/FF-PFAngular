@@ -9,13 +9,17 @@
         class="form-control"
         name="nombreCat"
         placeholder="Introduzca el nombre de la categoria"
-        value="{this.state.nombreCat}"
-        onChange="{this.handleChange}"
+        [(ngModel)]="nombre"
       />
     </div>
 
     <br />
-    <button type="submit" class="btn btn-dark w-100" id="btn-login">
+    <button
+      type="submit"
+      class="btn btn-dark w-100"
+      id="btn-login"
+      (click)="addCategory()"
+    >
       Añadir
     </button>
   </form>

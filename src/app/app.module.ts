@@ -13,12 +13,14 @@ import { ComprarComponent } from './comprar/comprar.component';
 import { CatalogoComponent } from './comprar/catalogo/catalogo.component';
 import { TarjetaComponent } from './comprar/tarjeta/tarjeta.component';
 import { CategoriaComponent } from './comprar/categoria/categoria.component';
+import { AddCategoryComponent } from './add-category/add-category.component';
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     LoginComponent,
     AddProductComponent,
+    AddCategoryComponent,
     ComprarComponent,
     CestaComponent,
     CatalogoComponent,

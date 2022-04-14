@@ -9,38 +9,38 @@
         class="form-control"
         name="nombre"
         placeholder="Introduzca el nombre del producto"
-        value="{this.state.nombre}"
+        [(ngModel)]="nombre"
       />
       <label class="pt-2">Imagen del Producto</label>
-      <Input
+      <input
         type="file"
         class="form-control"
         name="imagen"
-        value="{this.state.imagen}"
+        [(ngModel)]="imagen"
       />
       <label class="pt-2">Precio</label>
-      <Input
+      <input
         type="number"
         class="form-control"
         name="precio"
         placeholder="Precio"
-        value="{this.state.precio}"
+        [(ngModel)]="precio"
       />
       <label class="pt-2">Stock</label>
-      <Input
+      <input
         type="number"
         class="form-control"
         name="stock"
         placeholder="Stock"
-        value="{this.state.stock}"
+        [(ngModel)]="stock"
       />
       <label class="pt-2">Categoria</label>
       <select
         class="form-select"
         id="categorias-producto"
         name="categoria"
-        value="{this.state.categoria}"
-        onChange="{this.handleChange}"
+        [(ngModel)]="categoria"
+        validations="required"
       ></select>
     </div>
 
