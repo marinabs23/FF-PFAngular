@@ -56,7 +56,7 @@ export class AddService {
     //imagen
     const pathimagen = producto.imagen;
     var arrayDeCadenas = pathimagen.split('\\');
-    producto.imagen = 'img/' + arrayDeCadenas[2];
+    producto.imagen = './assets/img/' + arrayDeCadenas[2];
     var currentProds;
     var sesionProds = localStorage.getItem('productos');
     if (sesionProds === null) {
@@ -241,4 +241,4 @@ var productos = [
 ];
 /*localStorage.removeItem('productos');
 localStorage.removeItem('categorias');
-localStorage.removeItem('cesta');*/
+localStorage.removeItem('cesta'); */
