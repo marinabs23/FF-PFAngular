@@ -6,6 +6,9 @@
   text-decoration: none;
   margin-bottom: 5px;
 }
+.agotado {
+  opacity: 0.5;
+}
 
 .arrow {
   position: absolute;

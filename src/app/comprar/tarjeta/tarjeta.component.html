@@ -1,4 +1,4 @@
-<div class="card mt-2">
+<div class="card mt-2" [ngClass]="isAvailable() ? 'card-disbled' : ''">
   <img class="card-img-top" src="{{ prod.imagen }}" alt="Foto camiseta" />
   <div class="card-body justify-content-center">
     <h5 class="card-title">{{ prod.nombre }}</h5>
@@ -8,7 +8,8 @@
     <button
       type="button"
       class="mt-2 btn mx-auto btn-dark d-block"
-      disabled="false"
+      (click)="addCesta(prod)"
+      [disabled]="isAvailable()"
     >
       Añadir
     </button>

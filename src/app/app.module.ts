@@ -14,6 +14,10 @@ import { CatalogoComponent } from './comprar/catalogo/catalogo.component';
 import { TarjetaComponent } from './comprar/tarjeta/tarjeta.component';
 import { CategoriaComponent } from './comprar/categoria/categoria.component';
 import { AddCategoryComponent } from './add-category/add-category.component';
+
+import { ProductoCestaComponent } from './comprar/cesta/producto-cesta/producto-cesta.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,8 +30,9 @@ import { AddCategoryComponent } from './add-category/add-category.component';
     CatalogoComponent,
     TarjetaComponent,
     CategoriaComponent,
+    ProductoCestaComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, FontAwesomeModule],
   providers: [],
   bootstrap: [AppComponent],
 })
