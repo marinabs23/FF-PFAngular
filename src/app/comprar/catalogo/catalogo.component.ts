@@ -26,7 +26,6 @@ export class CatalogoComponent implements OnInit {
     var productosCat = this.prodCat.filter(
       (articulo: any) => articulo.categoria === cat.idCategoria
     );
-    console.log(productosCat);
     return productosCat;
   };
 }
