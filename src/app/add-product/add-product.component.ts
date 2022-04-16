@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AddService } from '../add.service';
+import { CestaService } from '../cesta.service';
 
 @Component({
   selector: 'app-add-product',
@@ -8,7 +8,7 @@ import { AddService } from '../add.service';
   styleUrls: ['./add-product.component.css'],
 })
 export class AddProductComponent implements OnInit {
-  constructor(public _addService: AddService, public router: Router) {}
+  constructor(public _addService: CestaService, public router: Router) {}
 
   categorias = this._addService.getCategorias();
 

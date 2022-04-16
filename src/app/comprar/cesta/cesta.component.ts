@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { CestaService } from 'src/app/cesta.service';
 
 @Component({
@@ -8,9 +9,12 @@ import { CestaService } from 'src/app/cesta.service';
 })
 export class CestaComponent implements OnInit {
   constructor(public _cestaService: CestaService) {}
-  cesta: any = this._cestaService.getProductosCesta();
 
-  ngOnInit(): void {}
+  cesta$!: Observable<any>;
+
+  ngOnInit(): void {
+    this.cesta$ = this._cestaService.productosCesta;
+  }
 
   resetCesta() {
     localStorage.setItem('cesta', JSON.stringify([]));
@@ -18,7 +22,7 @@ export class CestaComponent implements OnInit {
 
   getPrecioTotal() {
     var precioTotal = 0;
-    this.cesta.forEach(function (producto: any) {
+    this.cesta$.forEach(function (producto: any) {
       precioTotal += producto.precio * producto.cantidad;
     });
     return precioTotal;
@@ -26,7 +30,7 @@ export class CestaComponent implements OnInit {
 
   getNumArticulos() {
     var numArticulosCesta = 0;
-    this.cesta.forEach(function (producto: any) {
+    this.cesta$.forEach(function (producto: any) {
       numArticulosCesta += producto.cantidad;
     });
     return numArticulosCesta;

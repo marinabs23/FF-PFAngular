@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AddService } from 'src/app/add.service';
+import { Observable } from 'rxjs';
+import { filter } from 'rxjs/operators';
+import { CestaService } from 'src/app/cesta.service';
 
 @Component({
   selector: 'app-catalogo',
@@ -7,17 +9,24 @@ import { AddService } from 'src/app/add.service';
   styleUrls: ['./catalogo.component.css'],
 })
 export class CatalogoComponent implements OnInit {
-  constructor(public _addService: AddService) {}
+  constructor(public _cestaService: CestaService) {}
 
-  categorias = this._addService.getCategorias();
-  productos = this._addService.getProductos();
-  ngOnInit(): void {}
+  productos$!: Observable<any>;
+  prodCat: any;
+
+  ngOnInit(): void {
+    this.productos$ = this._cestaService.productos;
+  }
+  categorias = this._cestaService.getCategorias();
+  productos = this._cestaService.getProductos();
 
   getProductosCat = (cat: any) => {
-    var productosCat = this.productos.filter(
-      //filtramos solo los productos que pretenezcan a la categoria que vamos a pintar
+    //filtramos solo los productos que pretenezcan a la categoria que vamos a pintar
+    this.productos$.pipe().subscribe((res: any) => (this.prodCat = res));
+    var productosCat = this.prodCat.filter(
       (articulo: any) => articulo.categoria === cat.idCategoria
     );
+    console.log(productosCat);
     return productosCat;
   };
 }

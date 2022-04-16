@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AddService } from '../add.service';
+import { CestaService } from '../cesta.service';
 
 @Component({
   selector: 'app-addCategory',
@@ -9,7 +9,7 @@ import { AddService } from '../add.service';
 })
 export class AddCategoryComponent {
   nombre: string = '';
-  constructor(public _addService: AddService, public router: Router) {}
+  constructor(public _addService: CestaService, public router: Router) {}
 
   addCategory() {
     console.log('categoria añadida: ' + this.nombre);

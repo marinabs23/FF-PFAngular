@@ -9,7 +9,7 @@
   <div class="row" id="lista-cesta">
     <!--productos-->
     <app-producto-cesta
-      *ngFor="let prod of cesta"
+      *ngFor="let prod of cesta$ | async"
       [prod]="prod"
     ></app-producto-cesta>
   </div>
