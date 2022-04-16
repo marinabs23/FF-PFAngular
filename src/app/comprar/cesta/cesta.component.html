@@ -1,12 +1,17 @@
 <div class="col-3 cesta shadow p-3 mt-5 mb-4 bg-white">
   <h1 class="text-center">Cesta</h1>
-  <h3 class="float-left" id="numArticulos">0 artículos</h3>
-  <h4 id="preciototal" class="float-right mr-1">0€</h4>
-  <br />
-  <br />
+  <h3 class="float-start" id="numArticulos">
+    {{ getNumArticulos() }} artículos
+  </h3>
+  <h4 id="preciototal" class="float-end mr-1">{{ getPrecioTotal() }}€</h4>
+  <br /><br />
   <hr />
   <div class="row" id="lista-cesta">
     <!--productos-->
+    <app-producto-cesta
+      *ngFor="let prod of cesta"
+      [prod]="prod"
+    ></app-producto-cesta>
   </div>
   <hr />
 </div>
