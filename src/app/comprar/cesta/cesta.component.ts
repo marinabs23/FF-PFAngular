@@ -20,6 +20,10 @@ export class CestaComponent implements OnInit {
 
   resetCesta() {
     localStorage.setItem('cesta', JSON.stringify([]));
+    this.cesta$ = this._cestaService.productosCesta;
+    this.cesta$.pipe().subscribe((res: any) => (this.artCesta = res));
+    this.displayStyle = 'none';
+    location.reload();
   }
 
   getPrecioTotal() {
@@ -38,5 +42,14 @@ export class CestaComponent implements OnInit {
       numArticulosCesta += producto.cantidad;
     });
     return numArticulosCesta;
+  }
+
+  displayStyle = 'none';
+
+  openPopup() {
+    this.displayStyle = 'block';
+  }
+  closePopup() {
+    this.displayStyle = 'none';
   }
 }
